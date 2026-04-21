@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="Option.Calculations/Option.Calculations.csproj" />
+  <Project Path="OptionVisualizer/optionvisualizer.client/optionvisualizer.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="OptionVisualizer/OptionVisualizer.Server/OptionVisualizer.Server.csproj" />
+</Solution>
