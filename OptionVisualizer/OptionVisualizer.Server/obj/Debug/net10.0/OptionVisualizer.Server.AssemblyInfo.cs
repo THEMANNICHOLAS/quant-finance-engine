@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OptionVisualizer.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fe8961c58fb24f72af149f2ee741d366a223c31")]
 [assembly: System.Reflection.AssemblyProductAttribute("OptionVisualizer.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OptionVisualizer.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
