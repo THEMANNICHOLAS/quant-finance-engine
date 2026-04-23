@@ -3,8 +3,8 @@
     public class OptionPricing
     {
 
-        /*
-       *  Before touching the code, you need the standard Black-Scholes formula for a call option:
+  /*
+  Before touching the code, you need the standard Black-Scholes formula for a call option:
   $C = S_0 N(d_1) - K e^{-rT} N(d_2)$
 
   Where:
@@ -15,7 +15,7 @@
   - $N(\cdot)$: The Cumulative Distribution Function (CDF) of the standard normal distribution.
          * 
          * 
-       */
+  */
         private double underlyingPrice; //current stock price
         private double strikePrice; //strike price
         private double riskFreeRate; //risk-free interest rate
@@ -48,6 +48,12 @@
             return putOptionPrice;
         }
 
+
+        public double calculateDelta()
+        {
+            double d1 = (Math.Log(underlyingPrice / strikePrice) + (riskFreeRate + 0.5 * Math.Pow(0.2, 2)) * time) / (0.2 * Math.Sqrt(time));
+            return Statistics.Phi(d1);
+        }
 
     }
 }
