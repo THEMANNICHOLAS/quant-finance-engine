@@ -85,4 +85,9 @@ jobs:
           test -f data_architecture.md
 
       - name: Markdown lint
-        run: npx -y markdownlint-cli2 "**/*.md" "#node_modules"
+        run: |
+          npx -y markdownlint-cli2 \
+            "**/*.md" \
+            "#node_modules" \
+            "!.cursor/**" \
+            "!**/CHANGELOG.md"
