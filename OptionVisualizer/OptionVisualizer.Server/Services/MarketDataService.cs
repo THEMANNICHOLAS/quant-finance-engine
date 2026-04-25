@@ -1,21 +1,28 @@
-using System.Net.Http.Json;
+using System.Net.Http;
 
-namespace OptionVisualizer.Server.Services
+namespace OptionVisualizer.Server.Services;
+
+public class MarketDataService
 {
-    public class MarketDataService
+    private readonly HttpClient _httpClient;
+
+    /// <summary>
+    /// Constructor for HttpClient taken from Program.cs for marketdata.app
+    /// </summary>
+    /// <param name="httpClient"></param>
+    /// <exception cref="ArgumentNullException"></exception>    
+    public MarketDataService(IHttpClientFactory httpClientFactory)
     {
-        private readonly HttpClient _httpClient;
+        ArgumentNullException.ThrowIfNull(httpClientFactory);
+        _httpClient = httpClientFactory.CreateClient("MarketData");
+    }
 
-        /// <summary>
-        /// Constructor for the HTTP client from marketdata.app
-        /// </summary>
-        /// <param name="httpClient"></param>
-        public MarketDataService(HttpClient httpClient){
-            _httpClient = httpClient;
-        }
-
-        public async Task<MarketData> GetMarketDataAsync(string symbol){
-            
-            return 
-        }
+    /// <summary>
+    /// Placeholder until Market Data responses are modeled (e.g. expirations/strikes DTOs).
+    /// </summary>
+    public Task<string> GetMarketDataAsync(string symbol, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(symbol);
+        throw new NotImplementedException();
+    }
 }

@@ -17,6 +17,13 @@ namespace OptionVisualizer.Server.Services.Api.Requests
         public string? Date  {get; init; }
         public string? DateFormat  {get; init; }
 
+        public ExpirationsRequest(string Underlying){
+            this.Underlying = Underlying;
+        }
+
+
+
+
         /// <summary>
         /// Creates a safe URL string for API requests
         /// </summary>

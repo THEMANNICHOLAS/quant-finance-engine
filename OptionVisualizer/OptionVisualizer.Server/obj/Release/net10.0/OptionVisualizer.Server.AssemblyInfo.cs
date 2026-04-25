@@ -12,7 +12,7 @@ using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("c8f21429-b27a-4a6c-a69b-7a94a39b5c07")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("OptionVisualizer.Server")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75f0ea76a2df0bca14adb6360d17412d7875289b")]
 [assembly: System.Reflection.AssemblyProductAttribute("OptionVisualizer.Server")]
