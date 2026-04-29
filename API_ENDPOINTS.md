@@ -1,12 +1,13 @@
+# API Endpoints
+
 Get a list of current or historical option expiration dates for an underlying symbol. If no optional parameters are used, the endpoint returns the expirations for strike in the chain.
 
-Parameters
-Name	Description
+## Parameters
+
 format
 string
 (query)
 The format parameter is used to specify the format for your data. We support JSON and CSV formats. The default format is JSON.
-
 
 --
 strike
@@ -26,7 +27,6 @@ string
 (query)
 The dateformat parameter allows you specify the format you wish to receive date and time information in.
 
-
 --
 limit
 integer
@@ -45,7 +45,6 @@ boolean
 (query)
 The headers parameter is used to turn off headers when using CSV output.
 
-
 --
 columns
 string
@@ -57,7 +56,6 @@ human
 boolean
 (query)
 Use human-readable attribute names in the JSON or CSV output instead of the standard camelCase attribute names.
-
 
 --
 underlying *

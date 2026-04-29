@@ -1,4 +1,4 @@
-Multi-Legged Options Watchlist & Strategy Engine
+# Multi-Legged Options Watchlist & Strategy Engine
 
 A high-performance Fintech application built with .NET 8 and React, designed to track complex options strategies (Spreads, Iron Condors) with real-time data persistence and low-latency updates.
 
@@ -57,17 +57,20 @@ CI/CD (GitHub Actions)
 The repository includes a CI workflow at `.github/workflows/ci.yml` that runs on pull requests and key branch pushes.
 
 Backend checks:
+
 - `dotnet restore`
 - `dotnet build` (Release)
 - `dotnet format --verify-no-changes` for C# lint/style enforcement
 - `dotnet test`
 
 Frontend checks:
+
 - `npm ci`
 - `npm run lint`
 - `npm run build`
 
 Documentation checks:
+
 - verifies required architecture/spec files are present
 - runs markdown linting (`markdownlint-cli2`)
 
