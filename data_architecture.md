@@ -1,4 +1,6 @@
-``` mermaid
+# Data Architecture
+
+```mermaid
 ---
 config:
   layout: fixed

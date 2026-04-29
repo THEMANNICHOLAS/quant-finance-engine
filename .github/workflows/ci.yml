@@ -1,0 +1,93 @@
+name: CI
+
+on:
+  pull_request:
+    branches: ["**"]
+  push:
+    branches: ["main", "master", "develop"]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend Build + Lint + Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        run: dotnet restore OptionChainVisualizer.slnx
+
+      - name: Build
+        run: dotnet build OptionChainVisualizer.slnx --configuration Release --no-restore
+
+      - name: C# Format/Lint Check
+        run: dotnet format OptionChainVisualizer.slnx --verify-no-changes --verbosity minimal
+
+      - name: Test
+        run: dotnet test OptionChainVisualizer.slnx --configuration Release --no-build --verbosity normal
+
+  frontend:
+    name: Frontend Lint + Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: OptionVisualizer/optionvisualizer.client
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: OptionVisualizer/optionvisualizer.client/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+  docs:
+    name: Documentation Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check required docs exist
+        run: |
+          test -f README.md
+          test -f requirements.md
+          test -f er_diagram.md
+          test -f data_architecture.md
+
+      - name: Markdown lint
+        run: |
+          npx -y markdownlint-cli2 \
+            "**/*.md" \
+            "#node_modules" \
+            "!.cursor/**" \
+            "!**/CHANGELOG.md"

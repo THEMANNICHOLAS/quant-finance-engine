@@ -1,4 +1,0 @@
-C:\Users\sting\Documents\OptionChainVisualizer\Option.Calculations\obj\Debug\net10.0\Option.Calculations.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\sting\Documents\OptionChainVisualizer\Option.Calculations\obj\Debug\net10.0\Option.Calculations.AssemblyInfoInputs.cache
-C:\Users\sting\Documents\OptionChainVisualizer\Option.Calculations\obj\Debug\net10.0\Option.Calculations.AssemblyInfo.cs
-C:\Users\sting\Documents\OptionChainVisualizer\Option.Calculations\obj\Debug\net10.0\Option.Calculations.csproj.CoreCompileInputs.cache

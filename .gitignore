@@ -1,1 +1,24 @@
 .env
+
+# Visual Studio / IDE
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# .NET build artifacts
+**/bin/
+**/obj/
+TestResults/
+
+# Coverage
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+
+# Logs / temp
+*.log
+*.tmp
+*.cache

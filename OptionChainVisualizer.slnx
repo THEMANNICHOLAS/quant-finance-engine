@@ -5,4 +5,5 @@
     <Deploy />
   </Project>
   <Project Path="OptionVisualizer/OptionVisualizer.Server/OptionVisualizer.Server.csproj" />
+  <Project Path="tests/OptionVisualizer.Server.Tests/OptionVisualizer.Server.Tests.csproj" />
 </Solution>
