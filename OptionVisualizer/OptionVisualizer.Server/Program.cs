@@ -20,7 +20,7 @@ builder.Services.AddHttpClient(MarketDataClientName, (sp, client) =>
 {
     var configuration = sp.GetRequiredService<IConfiguration>();
     var baseUrl = configuration["MarketData:BaseUrl"] ?? "https://api.marketdata.app";
-    var token = configuration["MarketData:Token"]; // ?? MY_TOKEN;
+    var token = configuration["MarketData:Token"];
 
     client.BaseAddress = new Uri(baseUrl.TrimEnd('/') + "/");
     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

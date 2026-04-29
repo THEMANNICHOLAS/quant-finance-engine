@@ -3,19 +3,19 @@
     public class OptionPricing
     {
 
-  /*
-  Before touching the code, you need the standard Black-Scholes formula for a call option:
-  $C = S_0 N(d_1) - K e^{-rT} N(d_2)$
+        /*
+        Before touching the code, you need the standard Black-Scholes formula for a call option:
+        $C = S_0 N(d_1) - K e^{-rT} N(d_2)$
 
-  Where:
-  - $S_0$: Current stock price
-  - $K$: Strike price
-  - $r$: Risk-free interest rate
-  - $T$: Time to expiration (in years)
-  - $N(\cdot)$: The Cumulative Distribution Function (CDF) of the standard normal distribution.
-         * 
-         * 
-  */
+        Where:
+        - $S_0$: Current stock price
+        - $K$: Strike price
+        - $r$: Risk-free interest rate
+        - $T$: Time to expiration (in years)
+        - $N(\cdot)$: The Cumulative Distribution Function (CDF) of the standard normal distribution.
+               * 
+               * 
+        */
         private double underlyingPrice; //current stock price
         private double strikePrice; //strike price
         private double riskFreeRate; //risk-free interest rate

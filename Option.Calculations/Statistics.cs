@@ -44,7 +44,7 @@ namespace Option.Calculations
             int maxIterations = 100)
 
         {
-            double x = initialGuess; 
+            double x = initialGuess;
             for (int i = 0; i < maxIterations; i++)
             {
                 double fx = function(x);
@@ -72,6 +72,6 @@ namespace Option.Calculations
             return sum / simulations;
         }
 
-        }
     }
+}
 

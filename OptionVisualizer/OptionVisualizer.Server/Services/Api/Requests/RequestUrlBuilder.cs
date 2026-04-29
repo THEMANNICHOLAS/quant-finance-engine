@@ -2,19 +2,23 @@ using System.Text;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 
 
-namespace OptionVisualizer.Server.Services.Api.Requests{
+namespace OptionVisualizer.Server.Services.Api.Requests
+{
 
-    public class RequestUrlBuilder{
+    public class RequestUrlBuilder
+    {
 
-        public static string Build (
+        public static string Build(
                             IEnumerable<KeyValuePair<string, string?>> queryParams,
-                            string baseURL, 
+                            string baseURL,
                             string endpoint)
         {
-            if (string.IsNullOrWhiteSpace(baseURL)){
+            if (string.IsNullOrWhiteSpace(baseURL))
+            {
                 throw new ArgumentException("Base Url is needed");
             }
-            if (string.IsNullOrWhiteSpace(endpoint)){
+            if (string.IsNullOrWhiteSpace(endpoint))
+            {
                 throw new ArgumentException("Endpoint path is needed");
             }
 
@@ -24,11 +28,14 @@ namespace OptionVisualizer.Server.Services.Api.Requests{
 
             var urlParts = new List<string>();
 
-            foreach (var pair in queryParams){
-                if(string.IsNullOrWhiteSpace(pair.Value)){
+            foreach (var pair in queryParams)
+            {
+                if (string.IsNullOrWhiteSpace(pair.Value))
+                {
                     continue; //skip the empty pairs as a lot are optional
                 }
-                if(string.IsNullOrWhiteSpace(pair.Key)){
+                if (string.IsNullOrWhiteSpace(pair.Key))
+                {
                     continue;
                 }
                 //Establish the new key-values that will be appended
@@ -38,7 +45,8 @@ namespace OptionVisualizer.Server.Services.Api.Requests{
                 urlParts.Add($"{key}={value}");
             }
             //If nothing to append,  just return the URI by itself
-            if (urlParts.Count == 0){
+            if (urlParts.Count == 0)
+            {
                 return $"{basePath}{endpointPath}";
             }
 
